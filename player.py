@@ -17,21 +17,27 @@ class Player(pygame.sprite.Sprite):
     def __init__(self, x, y, number):
         pygame.sprite.Sprite.__init__(self)
         self.number = number
-        img = pygame.image.load("images/pacmanyellow.png")
+
+        # Define image paths for each player number
+        image_paths = ["images/pacmanyellow.png", "images/pacmanblue.png", "images/pacmanred.png", "images/pacmanpink.png"]
+
+        # Load the appropriate image based on the player's number
+        img = pygame.image.load(image_paths[number])
         self.image = pygame.transform.scale(img, (tile_size, tile_size))
 
+        # Define different Pacman images for directions
         self.right = self.image
         self.left = pygame.transform.rotate(self.image, 180)
         self.up = pygame.transform.rotate(self.image, 90)
         self.down = pygame.transform.rotate(self.image, 270)
 
+        # Rest of your __init__ code...
         self.rect = self.image.get_rect()
         self.rect.x = x
         self.rect.y = y
         self.width = self.image.get_width()
         self.height = self.image.get_height()
         self.vel = 5
-
         self.direction = STOPPED
         self.invincibility_time = 0
         self.score = 0
