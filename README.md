@@ -11,8 +11,8 @@ The server needs to be running first and always be running in the background. Yo
 
 ## Demo Pictures
 ### Starting Position:
-![starting](demo_images/Starting.png)
+![starting](Starting.png)
 ### In Game:
-![game](demo_images/game.png)
+![game](game.png)
 ### Win Screen:
-![win](demo_images/win.png)
+![win](win.png)
